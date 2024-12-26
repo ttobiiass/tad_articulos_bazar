@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Artículos de Bazar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+		    <img src="images/logo3.jpeg" class="logo1">
+            <a href="index.html" class="logo">Tienda de Bazar</a>
+            <div class="nav-links">
+                <a href="mates.html">Mates</a>
+                <a href="jarras.html">Jarras</a>
+                <a href="termos.html">Termos</a>
+				<a href="bombilla.html">Bombillas</a>
+                <a href="cart.html">Carrito</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Bienvenido a la Tienda de Artículos de Bazar</h1>
+            <p>Explora una selección exclusiva de mates, termos y jarras. ¡Compra lo mejor para ti!</p>
+            <a href="mates.html" class="cta-btn">Ver Productos</a>
+        </div>
+    </section>
+     <br><br>
+    <!-- Productos -->
+    <main class="product-container">
+        <h2 class="section-title">Nuestros Productos</h2>
+        <div class="products">
+            <!-- Producto 1 -->
+            <div class="product">
+                <img class="product-image" src="images/mateargentina.jpeg" alt="Mate de Argentina">
+                <h3>Mate De Argentina</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate de Argentina', 10000, 'images/mateargentina.jpeg')">Agregar al carrito</button>
+            </div>
+            <!-- Producto 2 -->
+            <div class="product">
+                <img class="product-image" src="images/mateescudoriver.jpeg" alt="Mate de River">
+                <h3>Mate Escudo De River</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Escudo de River', 10000, 'images/mateescudoriver.jpeg')">Agregar al carrito</button>
+            </div>
+            <!-- Producto 3 -->
+            <div class="product">
+                <img class="product-image" src="images/mateboca.jpeg" alt="Mate de Boca">
+                <h3>Mate de Boca (sin stock)</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate de Boca', 10000, 'images/mateboca.jpeg')">Agregar al carrito</button>
+            </div>
+            <!-- Producto 4 -->
+            <div class="product">
+                <img class="product-image" src="images/matemessijulian.jpeg" alt="Mate de messi y julian">
+                <h3>Mate De Messi y Julian</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate de Messi y Julian', 10000, 'images/matemessijulian.jpeg')">Agregar al carrito</button>
+            </div>
+            <!-- Producto 5 -->
+            <div class="product">
+                <img class="product-image" src="images/matefrase1.jpeg" alt="Mate Frase">
+                <h3>Mate Con Frase</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Frase', 10000, 'images/matefrase1.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 6 -->
+            <div class="product">
+                <img class="product-image" src="images/matefrase2.jpeg" alt="Mate Frase">
+                <h3>Mate Con Frase</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Frase', 10000, 'images/matefrase2.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 7 -->
+            <div class="product">
+                <img class="product-image" src="images/matelisorojo.jpeg" alt="Mate liso">
+                <h3>Mate Liso Rojo</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Liso', 10000, 'images/matelisorojo.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 8 -->
+            <div class="product">
+                <img class="product-image" src="images/mateperro.jpeg" alt="Mate Perro">
+                <h3>Mate De Perro Salchicha</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Perro', 10000, 'images/mateperro.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 9 -->
+            <div class="product">
+                <img class="product-image" src="images/matesimilstanley.jpeg" alt="Mate Simil Stanley">
+                <h3>Mate Simil Stanley</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Simil Stanley', 10000, 'images/matesimilstanley.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 10 -->
+            <div class="product">
+                <img class="product-image" src="images/matestanleyamarillo.jpeg" alt="Mate Stanley Amarillo">
+                <h3>Mate Stanley Amarillo</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Stanley Amarillo', 10000, 'images/matestanleyamarillo.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 11 -->
+            <div class="product">
+                <img class="product-image" src="images/matestanleyazul.jpeg" alt="Mate Stanley Azul">
+                <h3>Mate Stanley Azul</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Stanley Azul', 10000, 'images/matestanleyazul.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 12 -->
+            <div class="product">
+                <img class="product-image" src="images/matestanleyblanco.jpeg" alt="Mate Stanley Blanco">
+                <h3>Mate Stanley Blanco</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Stanley Blanco', 10000, 'images/matestanleyblanco.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 13 -->
+            <div class="product">
+                <img class="product-image" src="images/matestanleynegro.jpeg" alt="Mate Stanley Negro">
+                <h3>Mate Stanley Negro</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Stanley Negro ', 10000, 'images/matestanleynegro.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 14 -->
+            <div class="product">
+                <img class="product-image" src="images/matestanleyrosa.jpeg" alt="Mate Stanley Rosa">
+                <h3>Mate Stanley Rosa</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Stanley Rosa', 10000, 'images/matestanleyrosa.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 15 -->
+            <div class="product">
+                <img class="product-image" src="images/matestanleyverde.jpeg" alt="Mate Stanley Verde Oscuro">
+                <h3>Mate Stanley Verde Oscuro</h3>
+                <p>$10.000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Mate Stanley Verde Oscuro', 10000, 'images/matestanleyverde.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 16 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarrachacarita.jpeg" alt="Jarra De Chacarita">
+                <h3>Jarra De Chacarita (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra De Chacarita', 7500, 'images/jarrachacarita.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 17 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarracristiansuarez.jpeg" alt="Jarra De Cristian Suarez">
+                <h3>Jarra De Cristian Suarez (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra De Cristian Suarez', 7500, 'images/jarracristiansuarez.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 18 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarraindependiente.jpeg" alt="Jarra De Independiente">
+                <h3>Jarra De Independiente (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra De Independiente', 7500, 'images/jarraindependiente.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 19 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarraracing.jpeg" alt="Jarra De Racing">
+                <h3>Jarra De Racing (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra De Racing', 7500, 'images/jarraracing.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 20 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarraracingcampeon.jpeg" alt="Jarra De Racing Campeon">
+                <h3>Jarra De Racing Campeon (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra De Racing Campeon', 7500, 'images/jarraracingcampeon.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 21 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarrariver.jpeg" alt="Jarra De River Plate">
+                <h3>Jarra De River Plate (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra De River Plate', 7500, 'images/jarrariver.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 22 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarrasanlorenzo.jpeg" alt="Jarra De San Lorenzo">
+                <h3>Jarra De San Lorenzo (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra De San Lorenzo', 7500, 'images/jarrasanlorenzo.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 23 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarrasanmiguel.jpeg" alt="Jarra De San Miguel">
+                <h3>Jarra De San Miguel (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra De San Miguel', 7500, 'images/jarrasanmiguel.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 24 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarratigre.jpeg" alt="Jarra De Tigre">
+                <h3>Jarra De Tigre (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra De Tigre', 7500, 'images/jarratigre.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 25 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarravelez.jpeg" alt="Jarra De Velez">
+                <h3>Jarra De Velez (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra De Velez', 7500, 'images/jarravelez.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 26 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarrasmata.jpeg" alt="Jarra De Smata">
+                <h3>Jarra De Smata (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra De Smata', 7500, 'images/jarrasmata.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 27 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarrafrase1.jpeg" alt="Jarra Con Frase">
+                <h3>Jarra Con Frase (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra Con Frase', 7500, 'images/jarrafrase1.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 28 -->
+            <div class="product">
+                <img class="product-image1" src="images/jarrafrase2.jpeg" alt="Jarra Con Frase">
+                <h3>Jarra Con Frase (900ml)</h3>
+                <p>$7500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jarra Con Frase', 7500, 'images/jarrafrase2.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 29 -->
+            <div class="product">
+                <img class="product-image" src="images/bombilla.jpeg" alt="Bombilla">
+                <h3>Bombilla</h3>
+                <p>$6500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('bombilla', 6500, 'images/bombilla.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 30 -->
+            <div class="product">
+                <img class="product-image" src="images/bombillaplana.jpeg" alt="Bombilla Plana">
+                <h3>Bombilla Plana</h3>
+                <p>$3500</p>
+                <button class="add-to-cart-btn" onclick="addToCart('bombilla Plana', 3500, 'images/bombillaplana.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 31 -->
+            <div class="product">
+                <img class="product-image" src="images/termoafa.jpeg" alt="Termo De Argentina">
+                <h3>Termo De Argentina</h3>
+                <p>Sin Stock</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Termo De Argentina', , 'images/termoafa.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 32 -->
+            <div class="product">
+                <img class="product-image" src="images/termoboca.jpeg" alt="Termo De Boca">
+                <h3>Termo De Boca</h3>
+                <p>Sin Stock</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Termo De Boca', , 'images/Termoboca.jpeg')">Agregar al carrito</button>
+            </div>
+			<!-- Producto 33 -->
+            <div class="product">
+                <img class="product-image" src="images/termofrase1.jpeg" alt="Termo Con Frase">
+                <h3>Termo Con Frase</h3>
+                <p>Sin Stock</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Termo Con Frase', , 'images/termofrase1.jpeg')">Agregar al carrito</button>
+            </div>
+        </div>
+    </main>
+     <br><br><br><br><br>
+    <!-- Pie de página -->
+    <footer>
+        <div class="social-icons">
+            <p>Síguenos en Instagram:</p>
+            <a href="https://www.instagram.com/tad_articulos_bazar" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>© 2024 Tienda de Artículos de Bazar</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
