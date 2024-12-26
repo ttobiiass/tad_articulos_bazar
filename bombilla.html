@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarras - Tienda De Artículos Bazar</title>
+    <link rel="stylesheet" href="css/bombilla.css">
+    <!-- Google Fonts para fuentes modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Tienda De Artículos Bazar</a>
+            <div class="nav-links">
+                <a href="mates.html">Mates</a>
+                <a href="jarras.html">Jarras</a>
+                <a href="termos.html">Termos</a>
+				<a href="bombilla.html">Bombillas</a>
+                <a href="cart.html">Carrito <span id="cart-count">(0)</span></a>
+                <a href="index.html">Inicio</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección de productos -->
+    <main class="product-container">
+        <h2 class="section-title">Nuestras Bombillas</h2>
+        <div class="product-list">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <img src="images/bombilla.jpeg" alt="bombilla" class="product-img">
+                <div class="product-info">
+                    <h3>bombilla</h3>
+                    <p class="price">$6500</p>
+                    <button class="add-to-cart" onclick="addToCart('bombilla', 6500, 'images/bombilla.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <img src="images/bombillaplana.jpeg" alt="bombilla Plana" class="product-img">
+                <div class="product-info">
+                    <h3>bombilla Plana</h3>
+                    <p class="price">$3500</p>
+                    <button class="add-to-cart" onclick="addToCart('Bombilla Plana', 3500, 'images/bombillaplana.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+            <!-- Más productos (agregar según sea necesario) -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Mates, Termos y Jarras</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

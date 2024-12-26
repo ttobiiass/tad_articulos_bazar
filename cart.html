@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Tienda De Artículos Bazar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        emailjs.init('dPky•••••••••••••••••'); // Reemplazar con tu User ID de EmailJS
+    </script>
+
+    <style>
+        /* Estilos globales */
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #5B84B1 0%, #396AA0 100%);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #F39C12;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links a::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #F39C12;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #F39C12;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Carrito */
+        .cart-container {
+            padding: 3rem 1.5rem;
+            max-width: 1200px;
+            margin: 5rem auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .cart-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: #333;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+
+        /* Estilo de productos en el carrito */
+        .cart-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Mayor tamaño mínimo */
+            gap: 20px; /* Espacio entre productos */
+            margin-bottom: 2rem;
+            max-height: none; /* Eliminar la altura máxima para que se adapten más productos */
+            overflow-y: auto; /* Agregar scroll si hay demasiados productos */
+        }
+
+        .cart-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: auto; /* Ajustar la altura automática */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cart-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item img {
+            width: 100%;
+            height: 200px; /* Ajustar altura de la imagen */
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .cart-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .cart-item-details {
+            text-align: center;
+            margin-bottom: 30px; /* Asegurar que haya espacio para la información */
+        }
+
+        .cart-item-details .product-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            text-transform: capitalize;
+        }
+
+        .cart-item-details p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .remove-btn {
+            background-color: #E74C3C;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: auto; /* Asegura que se coloque al final del producto */
+        }
+
+        .remove-btn:hover {
+            background-color: #C0392B;
+        }
+
+        /* Resumen de pedido */
+        .cart-summary {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        .cart-summary h3 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .summary-item-total {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .pay-btn {
+            background-color: #3498DB;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .pay-btn:hover {
+            background-color: #2980B9;
+        }
+
+        .clear-cart-btn {
+            background-color: #F39C12;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            width: 100%;
+            margin-top: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .clear-cart-btn:hover {
+            background-color: #E67E22;
+        }
+
+        /* Estilo del formulario de pago */
+        .payment-form-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 5rem auto;
+            display: none;
+            transition: transform 0.3s ease;
+        }
+
+        .payment-form-container h3 {
+            font-size: 2.4rem;
+            color: #333;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .payment-form label {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .payment-form input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            background-color: #f8f8f8;
+            transition: border-color 0.3s ease;
+        }
+
+        .payment-form input:focus {
+            border-color: #3498DB;
+            outline: none;
+        }
+
+        .payment-form button {
+            background-color: #3498DB;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .payment-form button:hover {
+            background-color: #2980B9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header>
+        <a href="index.html" class="logo">Tienda De Artículos Bazar</a>
+        <div class="nav-links">
+            <a href="mates.html">Mates</a>
+            <a href="jarras.html">Jarras</a>
+            <a href="termos.html">Termos</a>
+            <a href="bombilla.html">Bombillas</a>
+            <a href="index.html">Inicio</a>
+        </div>
+    </header>
+
+    <!-- Carrito -->
+    <main class="cart-container">
+        <h2 class="section-title">Tu Carrito</h2>
+        <div id="cart-items" class="cart-items"></div>
+
+        <!-- Resumen del pedido -->
+        <div class="cart-summary">
+            <h3>Resumen de Pedido</h3>
+            <div id="cart-summary-items"></div>
+
+            <div class="summary-item">
+                <strong>Total: </strong><span id="total-price">$0</span>
+            </div>
+            <div class="summary-item-total">
+                <strong>Total a pagar: </strong><span id="final-total">$0</span>
+            </div>
+            
+            <button class="pay-btn" id="review-btn">Revisar Compra</button>
+        </div>
+        <br><br>
+        <button onclick="clearCart()" class="clear-cart-btn">Limpiar carrito</button>
+    </main>
+
+    <!-- Formulario de pago -->
+    <div class="payment-form-container" id="payment-form-container">
+        <h3>Formulario de Pago</h3>
+        <form id="payment-form" class="payment-form">
+            <label for="name">Nombre completo:</label>
+            <input type="text" id="from_name" name="name" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="from_email" name="email" required>
+
+            <label for="address">Localidad:</label>
+            <input type="text" id="address" name="address" required>
+            <button type="submit">Realizar pago</button>
+        </form>
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <footer>
+        <p>&copy; 2024 Tienda de Mates, Termos y Jarras</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

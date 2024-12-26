@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarras - Tienda De Artículos Bazar</title>
+    <link rel="stylesheet" href="css/jarras.css">
+    <!-- Google Fonts para fuentes modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Tienda De Artículos Bazar</a>
+            <div class="nav-links">
+                <a href="mates.html">Mates</a>
+                <a href="jarras.html">Jarras</a>
+                <a href="termos.html">Termos</a>
+				<a href="bombilla.html">Bombillas</a>
+                <a href="cart.html">Carrito <span id="cart-count">(0)</span></a>
+                <a href="index.html">Inicio</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección de productos -->
+    <main class="product-container">
+        <h2 class="section-title">Nuestras Jarras</h2>
+        <div class="product-list">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <img class="product-img" src="images/jarrachacarita.jpeg" alt="Jarra De Chacarita">
+                <div class="product-info">
+                    <h3>Jarra De Chacarita (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra De Chacarita', 7500, 'images/jarrachacarita.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <img class="product-img" src="images/jarracristiansuarez.jpeg" alt="Jarra De Cristian Suarez">
+                <div class="product-info">
+                    <h3>Jarra De Cristian Suarez (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra De Cristian Suarez', 7500, 'images/jarracristiansuarez.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card">
+                 <img class="product-img" src="images/jarraindependiente.jpeg" alt="Jarra De Independiente">
+                <div class="product-info">
+                   <h3>Jarra De Independiente (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra De Independiente', 7500, 'images/jarraindependiente.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card">
+                 <img class="product-img" src="images/jarraracing.jpeg" alt="Jarra De Racing">
+                <div class="product-info">
+                    <h3>Jarra De Racing (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra De Racing', 7500, 'images/jarraracing.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+			<!-- producto 5 -->
+            <div class="product-card">
+                <img class="product-img" src="images/jarraracingcampeon.jpeg" alt="Jarra De Racing Campeon">
+				<div class="product-info">
+                <h3>Jarra De Racing Campeon (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra De Racing Campeon', 7500, 'images/jarraracingcampeon.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+			<!-- producto 6 -->
+			<div class="product-card">
+                <img class="product-img" src="images/jarrariver.jpeg" alt="Jarra De River Plate">
+				<div class="product-info">
+                <h3>Jarra De River Plate (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra De River Plate', 7500, 'images/jarrariver.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+			<!-- producto 7 -->
+			<div class="product-card">
+                 <img class="product-img" src="images/jarrasanlorenzo.jpeg" alt="Jarra De San Lorenzo">
+				 <div class="product-info">
+                <h3>Jarra De San Lorenzo (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra De San Lorenzo', 7500, 'images/jarrasanlorenzo.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+			<!-- producto 8 -->
+			<div class="product-card">
+               <img class="product-img" src="images/jarrasanmiguel.jpeg" alt="Jarra De San Miguel">
+			   <div class="product-info">
+                <h3>Jarra De San Miguel (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra De San Miguel', 7500, 'images/jarrasanmiguel.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+			<!-- producto 9 -->
+			<div class="product-card">
+               <img class="product-img" src="images/jarratigre.jpeg" alt="Jarra De Tigre">
+			   <div class="product-info">
+                <h3>Jarra De Tigre (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra De Tigre', 7500, 'images/jarratigre.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+			<!-- producto 10 -->
+			<div class="product-card">
+                 <img class="product-img" src="images/jarravelez.jpeg" alt="Jarra De Velez">
+				 <div class="product-info">
+                <h3>Jarra De Velez (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra De Velez', 7500, 'images/jarravelez.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+			<!-- producto 11 -->
+			<div class="product-card">
+                <img class="product-img" src="images/jarrasmata.jpeg" alt="Jarra De Smata">
+				<div class="product-info">
+                <h3>Jarra De Smata (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra De Smata', 7500, 'images/jarrasmata.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+			<!-- producto 12 -->
+			<div class="product-card">
+                 <img class="product-img" src="images/jarrafrase1.jpeg" alt="Jarra Con Frase">
+				 <div class="product-info">
+                <h3>Jarra Con Frase (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra Con Frase', 7500, 'images/jarrafrase1.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+			<!-- producto 13 -->
+			<div class="product-card">
+                 <img class="product-img" src="images/jarrafrase2.jpeg" alt="Jarra Con Frase">
+				 <div class="product-info">
+                <h3>Jarra Con Frase (900ml)</h3>
+                <p class="price">$7500</p>
+                <button class="add-to-cart" onclick="addToCart('Jarra Con Frase', 7500, 'images/jarrafrase2.jpeg')">Agregar al carrito</button>
+                </div>
+            </div>
+            <!-- Más productos (agregar según sea necesario) -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Mates, Termos y Jarras</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
