@@ -7,6 +7,336 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<style>
+	/* Ajustes globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografía y colores base */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.logo1 {
+    flex: 1;                       /* esto cambia el tamaño de nuestro logo*/
+	width: 50px;
+    height: 150px;
+	border-radius:50%;
+}
+
+.navbar .logo {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f3a847;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #1f1f1f, #444444);
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: -60px; /* Reducir el espacio entre el Hero y los productos */
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #f0f0f0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.cta-btn {
+    padding: 15px 35px;
+    background-color: #f3a847;
+    color: #121212;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #e2812a;
+    transform: scale(1.05);
+}
+
+/* Contenedor de productos */
+.product-container {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: #1f1f1f;
+}
+
+/* Título de la sección "Nuestros Productos" */
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem; /* Reduzco el espacio entre el título y los productos */
+    color: #f0f0f0; /* Color claro para el título */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 1s ease-out forwards; /* Animación de aparición */
+}
+
+/* Animación de deslizamiento */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cuadrícula de productos */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Cambié esto para que sea flexible */
+    gap: 2rem;
+    justify-items: center;
+}
+
+.product {
+    background-color: #2c2c2c;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Ajustes para imágenes dentro de las tarjetas de producto en pantallas móviles */
+.product-image1 {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product:hover .product-image {
+    transform: scale(1.1);
+}
+
+.product h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: #e0e0e0; /* Color más claro para los títulos */
+}
+
+.product p {
+    font-size: 1.2rem;
+    color: #f3a847;
+    margin: 1rem 0;
+}
+
+/* Botón Agregar al carrito */
+.add-to-cart-btn {
+    background-color: #f3a847;
+    color: #121212;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #e2812a;
+    transform: scale(1.05);
+}
+
+/* Pie de página */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 2.5rem;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f3a847;
+}
+
+/* Media Queries para dispositivos móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    /* Ajustes para la barra de navegación */
+    .navbar {
+        flex-direction: column;
+        padding: 1rem 1rem;
+    }
+
+    .logo1 {
+        width: 40px;
+        height: 120px;
+    }
+
+    .navbar .logo {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Ajustes de la sección hero */
+    .hero-section {
+        height: 70vh;
+        margin-bottom: -40px;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .cta-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    /* Ajustes de los productos */
+    .product-container {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .products {
+        display: flex;
+        flex-wrap: wrap; /* Ajuste para que los productos se alineen horizontalmente en pantallas pequeñas */
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .product {
+        max-width: 45%; /* Limitar el tamaño de las tarjetas en dispositivos pequeños */
+        padding: 15px;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .product h3 {
+        font-size: 1.5rem;
+    }
+
+    .product p {
+        font-size: 1rem;
+    }
+
+    .add-to-cart-btn {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+
+    /* Ajustes de pie de página */
+    footer {
+        padding: 2rem 1rem;
+    }
+
+    .social-icons a {
+        font-size: 2rem;
+    }
+}
+	</style>
 </head>
 <body>
 
