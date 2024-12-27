@@ -11,24 +11,20 @@
 <body>
 
     <!-- Barra de navegación -->
-   
-<header>
-    <nav class="navbar">
-        <a href="index.html" class="logo">Tienda De Artículos Bazar</a>
-        <!-- Ícono del menú hamburguesa -->
-        <div class="menu-icon" id="menu-icon">
-            &#9776; <!-- Símbolo de hamburguesa -->
-        </div>
-        <div class="nav-links" id="nav-links">
-            <a href="mates.html">Mates</a>
-            <a href="jarras.html">Jarras</a>
-            <a href="termos.html">Termos</a>
-            <a href="bombilla.html">Bombillas</a>
-            <a href="cart.html">Carrito <span id="cart-count">(0)</span></a>
-            <a href="index.html">Inicio</a>
-        </div>
-    </nav>
-</header>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Tienda De Artículos Bazar</a>
+            <!-- Eliminamos el ícono del menú hamburguesa, ya no es necesario -->
+            <div class="nav-links" id="nav-links">
+                <a href="mates.html">Mates</a>
+                <a href="jarras.html">Jarras</a>
+                <a href="termos.html">Termos</a>
+                <a href="bombilla.html">Bombillas</a>
+             <a href="cart.html">Carrito <span id="cart-count">(0)</span></a>
+                <a href="index.html">Inicio</a>
+            </div>
+        </nav>
+    </header>
 
     <!-- Sección de productos -->
     <main class="product-container">
@@ -36,23 +32,23 @@
         <div class="product-list">
             <!-- Producto 1 -->
             <div class="product-card">
-                <img src="images/bombilla.jpeg" alt="bombilla" class="product-img">
+                <img class="product-img" src="images/bombilla.jpeg" alt="Bombilla">
                 <div class="product-info">
-                    <h3>bombilla</h3>
+                    <h3>Bombilla</h3>
                     <p class="price">$6500</p>
-                    <button class="add-to-cart" onclick="addToCart('bombilla', 6500, 'images/bombilla.jpeg')">Agregar al carrito</button>
+                    <button class="add-to-cart" onclick="addToCart('Bombilla', 6500, 'images/bombilla.jpeg')">Agregar al carrito</button>
                 </div>
             </div>
+
             <!-- Producto 2 -->
             <div class="product-card">
-                <img src="images/bombillaplana.jpeg" alt="bombilla Plana" class="product-img">
+               <img class="product-img" src="images/bombillaplana.jpeg" alt="Bombilla Plana">
                 <div class="product-info">
-                    <h3>bombilla Plana</h3>
+                   <h3>bombilla Plana</h3>
                     <p class="price">$3500</p>
                     <button class="add-to-cart" onclick="addToCart('Bombilla Plana', 3500, 'images/bombillaplana.jpeg')">Agregar al carrito</button>
                 </div>
             </div>
-            <!-- Más productos (agregar según sea necesario) -->
         </div>
     </main>
 
@@ -60,6 +56,7 @@
         <p>&copy; 2024 Tienda de Mates, Termos y Jarras</p>
     </footer>
 
-     <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+

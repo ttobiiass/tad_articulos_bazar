@@ -11,44 +11,42 @@
 <body>
 
     <!-- Barra de navegación -->
- <header>
-    <nav class="navbar">
-        <a href="index.html" class="logo">Tienda De Artículos Bazar</a>
-        <!-- Ícono del menú hamburguesa -->
-        <div class="menu-icon" id="menu-icon">
-            &#9776; <!-- Símbolo de hamburguesa -->
-        </div>
-        <div class="nav-links" id="nav-links">
-            <a href="mates.html">Mates</a>
-            <a href="jarras.html">Jarras</a>
-            <a href="termos.html">Termos</a>
-            <a href="bombilla.html">Bombillas</a>
-            <a href="cart.html">Carrito <span id="cart-count">(0)</span></a>
-            <a href="index.html">Inicio</a>
-        </div>
-    </nav>
-</header>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Tienda De Artículos Bazar</a>
+            <!-- Eliminamos el ícono del menú hamburguesa, ya no es necesario -->
+            <div class="nav-links" id="nav-links">
+                <a href="mates.html">Mates</a>
+                <a href="jarras.html">Jarras</a>
+                <a href="termos.html">Termos</a>
+                <a href="bombilla.html">Bombillas</a>
+             <a href="cart.html">Carrito <span id="cart-count">(0)</span></a>
+                <a href="index.html">Inicio</a>
+            </div>
+        </nav>
+    </header>
 
     <!-- Sección de productos -->
     <main class="product-container">
-        <h2 class="section-title">Nuestros termos</h2>
+        <h2 class="section-title">Nuestros Termos</h2>
         <div class="product-list">
             <!-- Producto 1 -->
             <div class="product-card">
-                <img src="images/termoafa.jpeg" alt="Termo Afa" class="product-img">
+                <img class="product-img" src="images/termoafa.jpeg" alt="Termo De Argentina">
                 <div class="product-info">
                     <h3>Termo De Argentina</h3>
                     <p class="price">Sin Stock</p>
                     <button class="add-to-cart" onclick="addToCart('Termo De Argentina', , 'images/termoafa.jpeg')">Agregar al carrito</button>
                 </div>
             </div>
+
             <!-- Producto 2 -->
             <div class="product-card">
-                <img src="images/termoboca.jpeg" alt="Termo De Boca" class="product-img">
+               <img class="product-img" src="images/termoboca.jpeg" alt="Termo De Boca">
                 <div class="product-info">
-                    <h3>Termo De Boca</h3>
+                   <h3>Termo De Boca</h3>
                     <p class="price">Sin Stock</p>
-                    <button class="add-to-cart" onclick="addToCart('Termo De Boca', , 'images/termoboca.jpeg')">Agregar al carrito</button>
+                    <button class="add-to-cart" onclick="addToCart('Termo De Boca', , 'images/Termo De Boca.jpeg')">Agregar al carrito</button>
                 </div>
             </div>
 
@@ -58,10 +56,9 @@
                 <div class="product-info">
                     <h3>Termo Con Frase</h3>
                     <p class="price">Sin Stock</p>
-                    <button class="add-to-cart" onclick="addToCart('Termo Con Frase', , 'images/termofrase1.jpeg')">Agregar al carrito</button>
+                    <button class="add-to-cart" onclick="addToCart('Mate de Boca', , 'images/termofrase1.jpeg')">Agregar al carrito</button>
                 </div>
             </div>
-            <!-- Más productos (agregar según sea necesario) -->
         </div>
     </main>
 
@@ -69,6 +66,7 @@
         <p>&copy; 2024 Tienda de Mates, Termos y Jarras</p>
     </footer>
 
-      <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+

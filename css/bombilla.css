@@ -8,66 +8,67 @@
 /* Tipografía global */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #EAEAEA; /* Fondo gris claro, elegante y profesional */
     color: #333;
     line-height: 1.6;
 }
 
 /* Barra de navegación */
 .navbar {
-    background-color: #33ccff; /* Color celeste */
+    background: linear-gradient(45deg, #00796b, #004d40); /* Degradado de verde moderno */
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave y grande */
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 3px solid #004d40; /* Borde inferior sutil */
 }
 
 .navbar .logo {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #fff;
     text-decoration: none;
-    font-weight: 600;
-}
-
-/* Icono del menú hamburguesa */
-.menu-icon {
-    display: none; /* Ocultar en pantallas grandes */
-    font-size: 2rem;
-    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 /* Enlaces de navegación */
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
+    flex-wrap: wrap; /* Permitir que los enlaces se ajusten en filas si es necesario */
+    justify-content: center; /* Centrar los enlaces */
 }
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #FFD700; /* Amarillo */
+    color: #FFD700; /* Amarillo moderno */
+    text-decoration: underline; /* Subrayado al pasar el mouse */
 }
 
-/* Sección de productos */
+/* Fondo de la página */
 .product-container {
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, #FFD700, #FFD700); /* Fondo con gradiente amarillo */
+    background: linear-gradient(135deg, #FFD700, #FF6347); /* Fondo de gradiente con un tono cálido */
     border-radius: 10px;
     margin-top: 2rem;
     color: white;
     text-align: center;
 }
 
+/* Sección de productos */
 .section-title {
     font-size: 2.5rem;
     color: white;
@@ -75,20 +76,116 @@ body {
     font-weight: 600;
 }
 
+/* Sección de productos */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo */
+    gap: 2rem; /* Espacio entre los productos */
+    margin-top: 2rem;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    transition: transform 0.3s ease; /* Agregar un efecto visual al hacer hover */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Desplazamiento hacia arriba para darle un efecto interactivo */
+}
+
+/* Ajuste de la imagen del producto */
+.product-img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 200px; /* Define una altura fija para la imagen */
+    border-radius: 10px;
+    object-fit: contain; /* Cambiar de cover a contain para evitar el recorte */
+    margin-bottom: 1rem; /* Espacio entre la imagen y la información */
+}
+
+/* Contenedor de información del producto */
+.product-info {
+    padding: 1rem;
+    text-align: center;
+    background-color: #fff; /* Fondo blanco para resaltar el texto sobre el fondo de la tarjeta */
+    border-radius: 10px;
+    width: 100%;
+}
+
+.product-info h3 {
+    font-size: 1.5rem;
+    color: #333; /* Color oscuro para que el texto se vea claramente */
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.product-info .price {
+    font-size: 1.2rem;
+    color: #33ccff; /* Color para el precio */
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    background-color: #33ccff;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.add-to-cart:hover {
+    background-color: #1da1d1; /* Color al pasar el mouse */
+}
+
+/* Diseño del carrito */
+#cart-count {
+    font-size: 1.2rem;
+    background-color: #FFD700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    color: #333;
+}
+
+/* Estilo del Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 3px solid #444; /* Borde superior sutil */
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
-    /* Mostrar el ícono del menú */
-    .menu-icon {
-        display: block; /* Mostrar el menú hamburguesa en pantallas pequeñas */
+	 .product-img {
+        height: auto; /* Permitir que la altura de la imagen se ajuste automáticamente */
+        max-height: 250px; /* Limitar la altura máxima de las imágenes en pantallas más pequeñas */
+        object-fit: contain; /* Asegura que la imagen no se recorte */
     }
-
-    /* Ocultar los enlaces de navegación por defecto en pantallas pequeñas */
+	
     .nav-links {
-        display: none;
-        flex-direction: column; /* Colocar los enlaces en columna */
+        flex-direction: row; /* Los enlaces se alinean horizontalmente */
+        justify-content: space-evenly; /* Distribuir los enlaces uniformemente */
         gap: 1rem;
-        text-align: center;
-        width: 100%;
     }
 
     .navbar .logo {
@@ -101,14 +198,31 @@ body {
     }
 
     .navbar {
-        flex-direction: column; /* Cambiar la barra de navegación a columna en móviles */
-        padding: 1rem; /* Ajusta el padding para móviles */
-    }
-
-    /* Cuando el menú está activo */
-    .nav-links.active {
-        display: flex; /* Mostrar los enlaces */
+        flex-direction: row; /* Mantener los elementos en fila en pantallas pequeñas */
+        padding: 1rem 2rem; /* Ajusta el padding para móviles */
     }
 }
 
+@media (max-width: 480px) {
+    .product-container {
+        padding: 2rem 1rem; /* Menos padding para pantallas muy pequeñas */
+    }
 
+    .product-list {
+        grid-template-columns: 1fr; /* Los productos se apilan en una sola columna */
+    }
+
+    .product-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .add-to-cart {
+        font-size: 1rem;
+    }
+
+    /* Ajuste de la imagen para pantallas pequeñas */
+    .product-img {
+        width: 100%;
+        height: auto; /* Permitir que la imagen ocupe toda la altura disponible */
+    }
+}
