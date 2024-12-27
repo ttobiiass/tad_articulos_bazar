@@ -75,91 +75,6 @@ body {
     font-weight: 600;
 }
 
-/* Diseño de la cuadrícula para los productos */
-.product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-/* Tarjetas de productos */
-.product-card {
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-    position: relative;
-    cursor: pointer;
-    padding-bottom: 1rem;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Ajustes para las imágenes: evitar que se corten */
-.product-img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain; /* Asegura que la imagen no se corte */
-    object-position: center; /* Centra la imagen dentro de su contenedor */
-    border-bottom: 2px solid #f4f4f4;
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover .product-img {
-    transform: scale(1.05);
-}
-
-.product-info {
-    padding: 1rem;
-}
-
-.product-info h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.product-info .price {
-    font-size: 1.2rem;
-    color: #FFD700; /* Amarillo */
-    margin-bottom: 1rem;
-}
-
-.add-to-cart {
-    background-color: #FFD700; /* Amarillo */
-    color: white;
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.add-to-cart:hover {
-    background-color: #FFCC00; /* Amarillo más oscuro para hover */
-    transform: scale(1.05);
-}
-
-/* Pie de página */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 3rem;
-}
-
-footer p {
-    font-size: 1rem;
-}
-
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
     /* Mostrar el ícono del menú */
@@ -189,5 +104,9 @@ footer p {
         flex-direction: column; /* Cambiar la barra de navegación a columna en móviles */
         padding: 1rem; /* Ajusta el padding para móviles */
     }
-}
 
+    /* Cuando el menú está activo */
+    .nav-links.active {
+        display: flex; /* Mostrar los enlaces */
+    }
+}
