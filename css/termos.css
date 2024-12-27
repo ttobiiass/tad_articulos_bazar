@@ -15,7 +15,7 @@ body {
 
 /* Barra de navegación */
 .navbar {
-    background-color: #333; /* Color oscuro */
+    background-color: #33ccff; /* Color celeste */
     color: #fff;
     padding: 1rem 2rem;
     display: flex;
@@ -34,6 +34,14 @@ body {
     font-weight: 600;
 }
 
+/* Icono del menú hamburguesa */
+.menu-icon {
+    display: none; /* Ocultar en pantallas grandes */
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Enlaces de navegación */
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -154,19 +162,18 @@ footer p {
 
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
-    /* Ajustes para la barra de navegación en móviles */
-    .navbar {
-        flex-direction: column; /* Cambia la dirección de los elementos a columna */
-        padding: 1rem; /* Ajusta el padding para móviles */
+    /* Mostrar el ícono del menú */
+    .menu-icon {
+        display: block; /* Mostrar el menú hamburguesa en pantallas pequeñas */
     }
 
-    /* Ajuste para los enlaces de navegación */
+    /* Ocultar los enlaces de navegación por defecto en pantallas pequeñas */
     .nav-links {
-        flex-direction: column; /* Los enlaces se muestran verticalmente */
-        gap: 1rem; /* Reduce el espacio entre los enlaces */
-        display: flex; /* Asegura que los enlaces sean flexibles en columna */
-        width: 100%; /* Los enlaces ocupan todo el ancho */
-        text-align: center; /* Centra los enlaces */
+        display: none;
+        flex-direction: column; /* Colocar los enlaces en columna */
+        gap: 1rem;
+        text-align: center;
+        width: 100%;
     }
 
     .navbar .logo {
@@ -178,17 +185,8 @@ footer p {
         font-size: 1.2rem; /* Ajusta el tamaño de los enlaces */
     }
 
-    /* Ajuste de la sección de productos */
-    .product-container {
-        padding: 2rem 1rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    /* Los enlaces del menú son visibles en pantallas pequeñas */
-    .nav-links {
-        display: block; /* Asegura que el menú de navegación sea visible en móviles */
+    .navbar {
+        flex-direction: column; /* Cambiar la barra de navegación a columna en móviles */
+        padding: 1rem; /* Ajusta el padding para móviles */
     }
 }

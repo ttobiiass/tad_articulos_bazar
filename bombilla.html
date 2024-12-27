@@ -10,20 +10,28 @@
 </head>
 <body>
 
-     <div class="navbar">
-     <a href="index.html" class="logo">Tienda De Artículos Bazar</a>
-    <!-- Botón para abrir/cerrar el menú en pantallas pequeñas -->
-    <div class="menu-toggle">
-        &#9776; <!-- Icono de hamburguesa -->
-    </div>
-    <div class="nav-links">
-       <a href="mates.html">Mates</a>
-          <a href="jarras.html">Jarras</a>
-                        <a href="termos.html">Termos</a>
-		<a href="cart.html">Carrito <span id="cart-count">(0)</span></a>
-		                <a href="index.html">Inicio</a>
-    </div>
-</div>
+    <!-- Barra de navegación -->
+   
+      <header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Tienda De Artículos Bazar</a>
+        
+        <!-- Ícono de menú hamburguesa -->
+        <div class="menu-icon" id="menu-icon">
+            &#9776; <!-- Icono de hamburguesa -->
+        </div>
+
+        <!-- Enlaces de navegación -->
+        <div class="nav-links" id="nav-links">
+            <a href="mates.html">Mates</a>
+            <a href="jarras.html">Jarras</a>
+            <a href="termos.html">Termos</a>
+            <a href="bombilla.html">Bombillas</a>
+            <a href="cart.html">Carrito <span id="cart-count">(0)</span></a>
+            <a href="index.html">Inicio</a>
+        </div>
+    </nav>
+</header>
 
     <!-- Sección de productos -->
     <main class="product-container">
@@ -55,6 +63,16 @@
         <p>&copy; 2024 Tienda de Mates, Termos y Jarras</p>
     </footer>
 
-    <script src="script.js"></script>
+     <script src="script.js">
+    // Obtenemos el ícono del menú y el contenedor de los enlaces
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinks = document.getElementById('nav-links');
+
+    // Agregamos un evento de clic al ícono del menú
+    menuIcon.addEventListener('click', () => {
+        // Alternamos la visibilidad del menú
+        navLinks.classList.toggle('active');
+    });
+	</script>
 </body>
 </html>
