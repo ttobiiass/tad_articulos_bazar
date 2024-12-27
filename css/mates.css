@@ -41,7 +41,7 @@ body {
     display: flex;
     gap: 2.5rem;
     justify-content: center; /* Centrar los enlaces */
-    flex-wrap: nowrap; /* Evitar que los enlaces se ajusten a filas en pantallas pequeñas */
+    flex-wrap: nowrap; /* Asegura que los enlaces no se envuelvan */
 }
 
 .nav-links a {
