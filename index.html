@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<style>
-	/* Ajustes globales */
+/* Ajustes globales */
 * {
     margin: 0;
     padding: 0;
@@ -299,14 +299,12 @@ footer {
     }
 
     .products {
-        display: flex;
-        flex-wrap: wrap; /* Ajuste para que los productos se alineen horizontalmente en pantallas pequeñas */
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en dispositivos móviles */
         gap: 1rem;
     }
 
     .product {
-        max-width: 45%; /* Limitar el tamaño de las tarjetas en dispositivos pequeños */
         padding: 15px;
     }
 
@@ -336,6 +334,7 @@ footer {
         font-size: 2rem;
     }
 }
+
 	</style>
 </head>
 <body>
