@@ -163,12 +163,16 @@ function sendOrderWhatsApp(fullName, email, address) {
     window.open(whatsappLink, '_blank');
 };
 
-    // Obtenemos el ícono del menú y el contenedor de los enlaces
-    const menuIcon = document.getElementById('menu-icon');
-    const navLinks = document.getElementById('nav-links');
+ // Obtenemos el ícono del menú y el contenedor de los enlaces
+const menuIcon = document.getElementById('menu-icon');
+const navLinks = document.getElementById('nav-links');
 
-    // Agregamos un evento de clic al ícono del menú
-    menuIcon.addEventListener('click', () => {
-        // Alternamos la visibilidad del menú
-        navLinks.classList.toggle('active');
-    });
+// Agregamos un evento de clic al ícono del menú
+menuIcon.addEventListener('click', () => {
+    // Alternamos la visibilidad del menú
+    navLinks.classList.toggle('active');
+});
+
+
+
+

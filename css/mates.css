@@ -78,10 +78,10 @@ body {
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
     /* Mostrar el ícono del menú */
-    .menu-icon {
-        display: block; /* Mostrar el menú hamburguesa en pantallas pequeñas */
+     .menu-icon {
+        display: block;
+        cursor: pointer;
     }
-
     /* Ocultar los enlaces de navegación por defecto en pantallas pequeñas */
     .nav-links {
         display: none;
@@ -111,3 +111,7 @@ body {
     }
 }
 
+/* Cuando el menú de navegación tiene la clase active, debe mostrarse en móviles */
+.nav-links.active {
+    display: flex !important; /* Asegura que los enlaces se muestren */
+}
