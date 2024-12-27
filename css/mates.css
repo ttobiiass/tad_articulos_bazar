@@ -175,54 +175,81 @@ footer p {
 }
 
 /* Media Queries para dispositivos pequeños */
+
+/* Para tablets y pantallas medianas */
 @media (max-width: 768px) {
-    .product-img {
-        height: auto; /* Permitir que la altura de la imagen se ajuste automáticamente */
-        max-height: 250px; /* Limitar la altura máxima de las imágenes en pantallas más pequeñas */
-        object-fit: contain; /* Asegura que la imagen no se recorte */
-    }
-    
+    /* Barra de navegación: Se asegura que los enlaces estén en una fila horizontal */
     .nav-links {
         flex-direction: row; /* Los enlaces se alinean horizontalmente */
         justify-content: space-evenly; /* Distribuir los enlaces uniformemente */
-        gap: 1rem;
+        gap: 1rem; /* Espacio entre los enlaces */
+    }
+
+    .navbar {
+        flex-direction: row; /* Alinear los elementos en una fila */
+        padding: 1rem 2rem; /* Ajustar el padding para móviles */
     }
 
     .navbar .logo {
         font-size: 1.6rem; /* Ajusta el tamaño del logo */
-        margin-bottom: 1rem; /* Espacio entre el logo y los enlaces */
     }
 
     .nav-links a {
         font-size: 1.2rem; /* Ajusta el tamaño de los enlaces */
     }
 
-    .navbar {
-        flex-direction: row; /* Mantener los elementos en fila en pantallas pequeñas */
-        padding: 1rem 2rem; /* Ajusta el padding para móviles */
+    /* Diseño de las imágenes de los productos */
+    .product-list {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Menos espacio para cada tarjeta */
+    }
+
+    .product-img {
+        height: 250px; /* Ajusta la altura de la imagen */
+        object-fit: contain; /* Asegura que la imagen no se recorte */
     }
 }
 
+/* Para móviles */
 @media (max-width: 480px) {
     .product-container {
         padding: 2rem 1rem; /* Menos padding para pantallas muy pequeñas */
     }
 
+    /* Barra de navegación: Mantener los enlaces en fila horizontal, pero ajustados */
+    .nav-links {
+        flex-direction: row;
+        justify-content: space-evenly; /* Distribuir los enlaces uniformemente */
+        gap: 1rem;
+    }
+
+    .navbar {
+        flex-direction: row; /* Alinear los elementos en una fila */
+        padding: 1rem 1rem; /* Ajustar el padding para móviles */
+    }
+
+    .navbar .logo {
+        font-size: 1.4rem; /* Ajusta el tamaño del logo */
+    }
+
+    .nav-links a {
+        font-size: 1rem; /* Ajusta el tamaño de los enlaces */
+    }
+
     .product-list {
-        grid-template-columns: 1fr; /* Los productos se apilan en una sola columna */
+        grid-template-columns: 1fr 1fr; /* Dos productos por fila en pantallas pequeñas */
+    }
+
+    .product-img {
+        height: 200px; /* Ajusta la altura de las imágenes */
+        width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+        object-fit: contain;
     }
 
     .product-info h3 {
-        font-size: 1.3rem;
+        font-size: 1.3rem; /* Ajuste de tamaño de texto */
     }
 
     .add-to-cart {
         font-size: 1rem;
-    }
-
-    /* Ajuste de la imagen para pantallas pequeñas */
-    .product-img {
-        width: 100%;
-        height: auto; /* Permitir que la imagen ocupe toda la altura disponible */
     }
 }
