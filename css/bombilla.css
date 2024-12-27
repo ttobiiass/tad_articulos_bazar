@@ -50,6 +50,21 @@ body {
     color: #FFD700; /* Amarillo */
 }
 
+/* Estilo para el botón del menú hamburguesa */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    background-color: #fff;
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
+}
+
 /* Sección de productos */
 .product-container {
     padding: 3rem 2rem;
@@ -153,6 +168,8 @@ footer p {
 }
 
 /* Media Queries para dispositivos pequeños */
+
+/* En pantallas pequeñas (móviles), ocultamos el menú de enlaces y mostramos el menú hamburguesa */
 @media (max-width: 768px) {
     .product-container {
         padding: 2rem 1rem;
@@ -168,5 +185,37 @@ footer p {
 
     .navbar {
         justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar.active .nav-links {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem;
+        border-top: 1px solid #fff;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
+    }
+}
+
+/* Para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
     }
 }

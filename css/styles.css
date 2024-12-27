@@ -231,27 +231,96 @@ footer {
     color: #f3a847;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
+/* Media Queries para dispositivos móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    /* Ajustes para la barra de navegación */
+    .navbar {
+        flex-direction: column;
+        padding: 1rem 1rem;
+    }
+
+    .logo1 {
+        width: 40px;
+        height: 120px;
+    }
+
+    .navbar .logo {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Ajustes de la sección hero */
+    .hero-section {
+        height: 70vh;
+        margin-bottom: -40px;
+    }
+
     .hero-section h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .hero-section p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .cta-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    /* Ajustes de los productos */
+    .product-container {
+        padding: 2rem 1rem;
     }
 
     .section-title {
-        font-size: 2.5rem;
-    }
-
-    .product {
-        max-width: 320px;
-        padding: 20px;
+        font-size: 2rem;
+        letter-spacing: 1.5px;
     }
 
     .products {
-        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .product {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .product h3 {
+        font-size: 1.5rem;
+    }
+
+    .product p {
+        font-size: 1rem;
+    }
+
+    .add-to-cart-btn {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+
+    /* Ajustes de pie de página */
+    footer {
+        padding: 2rem 1rem;
+    }
+
+    .social-icons a {
+        font-size: 2rem;
     }
 }
 

@@ -162,3 +162,10 @@ function sendOrderWhatsApp(fullName, email, address) {
     // Redirigir al usuario a WhatsApp
     window.open(whatsappLink, '_blank');
 };
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+
+menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
