@@ -34,14 +34,6 @@ body {
     font-weight: 600;
 }
 
-/* Menú hamburguesa */
-.menu-toggle {
-    display: none; /* Ocultar el icono de hamburguesa por defecto */
-    font-size: 2rem;
-    cursor: pointer;
-    color: white;
-}
-
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -161,57 +153,9 @@ footer p {
 }
 
 /* Media Queries para dispositivos pequeños */
-@media (max-width: 1024px) {
-    /* Ajustes para tabletas */
-    .navbar {
-        padding: 1rem;
-    }
 
-    .product-container {
-        padding: 2rem 1rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .product-list {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-
-    .product-card {
-        padding: 1rem;
-    }
-}
-
+/* En pantallas pequeñas (móviles), ocultamos el menú de enlaces y mostramos el menú hamburguesa */
 @media (max-width: 768px) {
-    /* Ajustes para pantallas más pequeñas */
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    /* Ocultar el menú de enlaces por defecto en pantallas pequeñas */
-    .nav-links {
-        display: none; 
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    /* Mostrar el icono de hamburguesa en pantallas pequeñas */
-    .menu-toggle {
-        display: block;
-    }
-
-    /* Mostrar enlaces de navegación cuando el menú hamburguesa esté activo */
-    .nav-links.active {
-        display: flex;
-        background-color: #333;
-        padding: 1rem;
-        width: 100%;
-    }
-
     .product-container {
         padding: 2rem 1rem;
     }
@@ -220,44 +164,60 @@ footer p {
         font-size: 2rem;
     }
 
-    .product-list {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1.5rem;
+    .nav-links {
+        display: none; /* Ocultamos el menú de navegación por defecto */
     }
 
-    .product-card {
+    .navbar {
+        justify-content: space-between;
+    }
+
+    /* Agregamos un botón de menú hamburguesa */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        background-color: #fff;
+        width: 30px;
+        height: 3px;
+        border-radius: 5px;
+    }
+
+    /* Cuando se activa el menú, mostramos los enlaces */
+    .navbar.active .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    /* Estilos de los enlaces del menú desplegable */
+    .nav-links a {
         padding: 1rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        border-top: 1px solid #fff;
+    }
+
+    .nav-links a:hover {
+        color: #ADD8E6; /* Azul clarito */
+    }
+
+    .product-list {
+        grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
     }
 }
 
-@media (max-width: 480px) {
-    /* Ajustes para dispositivos muy pequeños */
-    .navbar .logo {
-        font-size: 1.6rem;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .product-container {
-        padding: 1.5rem 1rem;
-    }
-
+/* Para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
     .product-list {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-
-    .product-card {
-        padding: 0.8rem;
-    }
-
-    .add-to-cart {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.2rem;
-    }
-
-    footer p {
-        font-size: 0.9rem;
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
     }
 }
