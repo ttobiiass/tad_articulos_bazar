@@ -8,7 +8,7 @@
     <!-- Google Fonts para fuentes modernas -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 	<style>
-	/* Reset de márgenes y paddings */
+/* Reset de márgenes y paddings */
 * {
     margin: 0;
     padding: 0;
@@ -49,9 +49,9 @@ body {
 /* Enlaces de navegación */
 .nav-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
     justify-content: center; /* Centrar los enlaces */
-    flex-wrap: nowrap; /* Asegura que los enlaces no se envuelvan */
+    flex-wrap: nowrap; /* Evitar que los enlaces se envuelvan en pantallas pequeñas */
 }
 
 .nav-links a {
@@ -230,6 +230,8 @@ footer p {
         flex-direction: row;
         justify-content: space-evenly; /* Distribuir los enlaces uniformemente */
         gap: 1rem;
+        width: 100%; /* Asegura que los enlaces ocupen el espacio completo */
+        flex-wrap: wrap; /* Permitir que los enlaces se envuelvan si es necesario */
     }
 
     .navbar {
@@ -247,6 +249,7 @@ footer p {
 
     .product-list {
         grid-template-columns: 1fr 1fr; /* Dos productos por fila en pantallas pequeñas */
+        gap: 1.5rem; /* Menos espacio entre los productos */
     }
 
     .product-img {
@@ -263,6 +266,7 @@ footer p {
         font-size: 1rem;
     }
 }
+
 
 	</style>
 </head>
