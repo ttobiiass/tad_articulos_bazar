@@ -289,12 +289,14 @@ footer {
     }
 
     .products {
-        grid-template-columns: 1fr; /* Cambié el diseño para que se ajusten mejor en pantallas pequeñas */
-        gap: 1.2rem;
+        display: flex;
+        flex-wrap: wrap; /* Ajuste para que los productos se alineen horizontalmente en pantallas pequeñas */
+        justify-content: center;
+        gap: 1rem;
     }
 
     .product {
-        max-width: 100%;
+        max-width: 45%; /* Limitar el tamaño de las tarjetas en dispositivos pequeños */
         padding: 15px;
     }
 
