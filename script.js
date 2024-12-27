@@ -151,7 +151,7 @@ function sendOrderWhatsApp(fullName, email, address) {
                     `*Total:* $${formatNumber(total.toFixed(2))}`;
 
     // Número de WhatsApp (sin el +, incluye el código de país)
-    const phoneNumber = '1140838075';  // Cambia esto por el número de WhatsApp al que deseas enviar el mensaje
+    const phoneNumber = '+54 1140838075';  // Cambia esto por el número de WhatsApp al que deseas enviar el mensaje
 
     // Codificar el mensaje para URL
     const encodedMessage = encodeURIComponent(message);
