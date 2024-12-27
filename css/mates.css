@@ -40,8 +40,8 @@ body {
 .nav-links {
     display: flex;
     gap: 2.5rem;
-    flex-wrap: wrap; /* Permitir que los enlaces se ajusten en filas si es necesario */
     justify-content: center; /* Centrar los enlaces */
+    flex-wrap: nowrap; /* Evitar que los enlaces se ajusten a filas en pantallas pequeñas */
 }
 
 .nav-links a {
@@ -176,12 +176,12 @@ footer p {
 
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
-	 .product-img {
+    .product-img {
         height: auto; /* Permitir que la altura de la imagen se ajuste automáticamente */
         max-height: 250px; /* Limitar la altura máxima de las imágenes en pantallas más pequeñas */
         object-fit: contain; /* Asegura que la imagen no se recorte */
     }
-	
+    
     .nav-links {
         flex-direction: row; /* Los enlaces se alinean horizontalmente */
         justify-content: space-evenly; /* Distribuir los enlaces uniformemente */
