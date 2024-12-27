@@ -8,36 +8,38 @@
 /* Tipografía global */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5; /* Nuevo color de fondo para la página */
+    background-color: #EAEAEA; /* Fondo gris claro, elegante y profesional */
     color: #333;
     line-height: 1.6;
 }
 
 /* Barra de navegación */
 .navbar {
-    background-color: #4CAF50; /* Verde más suave para la barra de navegación */
+    background: linear-gradient(45deg, #00796b, #004d40); /* Degradado de verde moderno */
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave y grande */
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 3px solid #004d40; /* Borde inferior sutil */
 }
 
 .navbar .logo {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #fff;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 /* Enlaces de navegación */
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     flex-wrap: wrap; /* Permitir que los enlaces se ajusten en filas si es necesario */
     justify-content: center; /* Centrar los enlaces */
 }
@@ -46,14 +48,17 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #FFD700; /* Amarillo */
+    color: #FFD700; /* Amarillo moderno */
+    text-decoration: underline; /* Subrayado al pasar el mouse */
 }
 
-/* Ajuste de imágenes de productos */
+/* Fondo de la página */
 .product-container {
     padding: 3rem 2rem;
     background: linear-gradient(135deg, #FFD700, #FF6347); /* Fondo de gradiente con un tono cálido */
@@ -63,6 +68,7 @@ body {
     text-align: center;
 }
 
+/* Sección de productos */
 .section-title {
     font-size: 2.5rem;
     color: white;
@@ -160,6 +166,7 @@ footer {
     text-align: center;
     padding: 2rem;
     margin-top: 3rem;
+    border-top: 3px solid #444; /* Borde superior sutil */
 }
 
 footer p {
@@ -216,8 +223,6 @@ footer p {
     /* Ajuste de la imagen para pantallas pequeñas */
     .product-img {
         width: 100%;
-        height: auto; /* Permitir que la altura de la imagen se ajuste automáticamente */
-        max-height: 250px; /* Limitar la altura máxima en pantallas muy pequeñas */
-        object-fit: contain; /* Cambiar de cover a contain para evitar el recorte */
+        height: auto; /* Permitir que la imagen ocupe toda la altura disponible */
     }
 }
