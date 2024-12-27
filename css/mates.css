@@ -34,17 +34,17 @@ body {
     font-weight: 600;
 }
 
-/* Icono del menú hamburguesa */
+/* Eliminar el ícono del menú hamburguesa */
 .menu-icon {
-    display: none; /* Ocultar en pantallas grandes */
-    font-size: 2rem;
-    cursor: pointer;
+    display: none; /* Eliminado, ya no se necesita */
 }
 
 /* Enlaces de navegación */
 .nav-links {
     display: flex;
     gap: 2rem;
+    flex-wrap: wrap; /* Permitir que los enlaces se ajusten en filas si es necesario */
+    justify-content: center; /* Centrar los enlaces en la barra */
 }
 
 .nav-links a {
@@ -77,18 +77,11 @@ body {
 
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
-    /* Mostrar el ícono del menú */
-     .menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-    /* Ocultar los enlaces de navegación por defecto en pantallas pequeñas */
+    /* Ajustar los enlaces de navegación en pantallas pequeñas */
     .nav-links {
-        display: none;
-        flex-direction: column; /* Colocar los enlaces en columna */
+        flex-direction: row; /* Los enlaces se alinean horizontalmente */
+        justify-content: space-evenly; /* Distribuir los enlaces uniformemente */
         gap: 1rem;
-        text-align: center;
-        width: 100%;
     }
 
     .navbar .logo {
@@ -101,17 +94,13 @@ body {
     }
 
     .navbar {
-        flex-direction: column; /* Cambiar la barra de navegación a columna en móviles */
-        padding: 1rem; /* Ajusta el padding para móviles */
-    }
-
-    /* Cuando el menú está activo */
-    .nav-links.active {
-        display: flex; /* Mostrar los enlaces */
+        flex-direction: row; /* Mantener los elementos en fila en pantallas pequeñas */
+        padding: 1rem 2rem; /* Ajusta el padding para móviles */
     }
 }
 
-/* Cuando el menú de navegación tiene la clase active, debe mostrarse en móviles */
-.nav-links.active {
-    display: flex !important; /* Asegura que los enlaces se muestren */
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 0.8rem;
+    }
 }
