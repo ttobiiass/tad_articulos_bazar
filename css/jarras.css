@@ -15,7 +15,7 @@ body {
 
 /* Barra de navegación */
 .navbar {
-    background-color: #333;
+    background-color: #333; /* Color oscuro */
     color: #fff;
     padding: 1rem 2rem;
     display: flex;
@@ -47,13 +47,13 @@ body {
 }
 
 .nav-links a:hover {
-    color: #62b253; /* Verde brillante */
+    color: #FFD700; /* Amarillo */
 }
 
 /* Sección de productos */
 .product-container {
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, #62b253, #006400); /* Fondo con gradiente verde */
+    background: linear-gradient(135deg, #FFD700, #FFD700); /* Fondo con gradiente amarillo */
     border-radius: 10px;
     margin-top: 2rem;
     color: white;
@@ -74,18 +74,7 @@ body {
     gap: 2rem;
 }
 
-/* Ajustes para las imágenes: evitar que se corten */
-.product-img {
-    width: 100%; /* La imagen ocupa todo el ancho disponible */
-    height: 200px; /* Define una altura constante para la imagen */
-    object-fit: contain; /* Evita que la imagen se corte */
-    object-position: center; /* Centra la imagen dentro del contenedor */
-    border-bottom: 2px solid #f4f4f4;
-    transition: transform 0.3s ease;
-    display: block;
-}
-
-/* Ajustar el contenedor del producto para que la imagen no se distorsione */
+/* Tarjetas de productos */
 .product-card {
     background-color: #fff;
     border-radius: 12px;
@@ -96,18 +85,23 @@ body {
     position: relative;
     cursor: pointer;
     padding-bottom: 1rem;
-    display: flex;
-    flex-direction: column; /* Hace que el contenido se apile verticalmente */
-    height: 400px; /* Establece una altura fija para el contenedor */
 }
 
-/* Ajustes en la tarjeta del producto cuando el cursor pasa por encima */
 .product-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Asegúrate de que la imagen se comporte de acuerdo con el contenedor */
+/* Ajustes para las imágenes: evitar que se corten */
+.product-img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain; /* Asegura que la imagen no se corte */
+    object-position: center; /* Centra la imagen dentro de su contenedor */
+    border-bottom: 2px solid #f4f4f4;
+    transition: transform 0.3s ease;
+}
+
 .product-card:hover .product-img {
     transform: scale(1.05);
 }
@@ -125,12 +119,12 @@ body {
 
 .product-info .price {
     font-size: 1.2rem;
-    color: #62b253;
+    color: #FFD700; /* Amarillo */
     margin-bottom: 1rem;
 }
 
 .add-to-cart {
-    background-color: #62b253; /* Verde */
+    background-color: #FFD700; /* Amarillo */
     color: white;
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
@@ -141,7 +135,7 @@ body {
 }
 
 .add-to-cart:hover {
-    background-color: #4a9c3f;
+    background-color: #FFCC00; /* Amarillo más oscuro para hover */
     transform: scale(1.05);
 }
 
@@ -159,9 +153,32 @@ footer p {
 }
 
 /* Media Queries para dispositivos pequeños */
-
-/* En pantallas pequeñas (móviles), ocultamos el menú de enlaces y mostramos el menú hamburguesa */
 @media (max-width: 768px) {
+    /* Ajustes para la barra de navegación en móviles */
+    .navbar {
+        flex-direction: column; /* Cambia la dirección de los elementos a columna */
+        padding: 1rem; /* Ajusta el padding para móviles */
+    }
+
+    /* Ajuste para los enlaces de navegación */
+    .nav-links {
+        flex-direction: column; /* Los enlaces se muestran verticalmente */
+        gap: 1rem; /* Reduce el espacio entre los enlaces */
+        display: flex; /* Asegura que los enlaces sean flexibles en columna */
+        width: 100%; /* Los enlaces ocupan todo el ancho */
+        text-align: center; /* Centra los enlaces */
+    }
+
+    .navbar .logo {
+        font-size: 1.6rem; /* Ajusta el tamaño del logo */
+        margin-bottom: 1rem; /* Espacio entre el logo y los enlaces */
+    }
+
+    .nav-links a {
+        font-size: 1.2rem; /* Ajusta el tamaño de los enlaces */
+    }
+
+    /* Ajuste de la sección de productos */
     .product-container {
         padding: 2rem 1rem;
     }
@@ -170,44 +187,8 @@ footer p {
         font-size: 2rem;
     }
 
-    /* Sección de navegación */
+    /* Los enlaces del menú son visibles en pantallas pequeñas */
     .nav-links {
-        display: none; /* Ocultamos el menú de navegación en móviles */
-    }
-
-    .navbar {
-        justify-content: space-between;
-    }
-
-    /* Menú hamburguesa en móviles */
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 2rem;
-        color: #fff;
-    }
-
-    .navbar.active .nav-links {
-        display: flex; /* Mostrar menú cuando se haga clic */
-        flex-direction: column; /* Los enlaces estarán apilados verticalmente */
-        gap: 1rem;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        padding: 1rem 0;
-    }
-
-    /* Para que las tarjetas de productos sean más pequeñas en móviles */
-    .product-list {
-        grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
-    }
-}
-
-/* Para pantallas medianas (tabletas) */
-@media (max-width: 1024px) {
-    .product-list {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
+        display: block; /* Asegura que el menú de navegación sea visible en móviles */
     }
 }

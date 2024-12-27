@@ -15,7 +15,7 @@ body {
 
 /* Barra de navegación */
 .navbar {
-    background-color: #333;
+    background-color: #333; /* Color oscuro */
     color: #fff;
     padding: 1rem 2rem;
     display: flex;
@@ -187,6 +187,7 @@ footer p {
         font-size: 2rem;
     }
 
+    /* Los enlaces del menú son visibles en pantallas pequeñas */
     .nav-links {
         display: block; /* Asegura que el menú de navegación sea visible en móviles */
     }
